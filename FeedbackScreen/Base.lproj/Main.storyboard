@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,109 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FeedbackScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How satisfied were you with the event?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nq7-YS-8c9">
+                                <rect key="frame" x="39.5" y="70" width="297.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8fn-ip-mCc">
+                                <rect key="frame" x="25" y="120.5" width="324" height="132"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKg-fe-LTT">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="132" id="I7x-GE-Xec"/>
+                                            <constraint firstAttribute="width" constant="108" id="lcv-Ci-fxX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="😡"/>
+                                        <connections>
+                                            <action selector="badFeedbackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xpa-Jz-qkI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpP-Nd-va5">
+                                        <rect key="frame" x="108" y="0.0" width="108" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="108" id="RiC-uy-0rh"/>
+                                            <constraint firstAttribute="height" constant="132" id="TJC-Ma-5Nj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="😐"/>
+                                        <connections>
+                                            <action selector="neutralFeedbackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PCy-96-xKl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0F-rt-SOq">
+                                        <rect key="frame" x="216" y="0.0" width="108" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="132" id="DNV-XB-4yD"/>
+                                            <constraint firstAttribute="width" constant="108" id="MFq-Rl-sdz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="😍"/>
+                                        <connections>
+                                            <action selector="goodFeedbackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ppm-ZB-M5x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have any comments?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK7-Gq-YdS">
+                                <rect key="frame" x="78.5" y="302.5" width="219.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y97-L1-I15">
+                                <rect key="frame" x="38" y="383" width="298" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="heO-Nj-AJU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oro-RW-Vbr">
+                                <rect key="frame" x="167" y="551" width="40" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Rate"/>
+                                <connections>
+                                    <action selector="rateBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2sX-Fo-qJH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8fn-ip-mCc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="79P-V2-yTs"/>
+                            <constraint firstItem="Oro-RW-Vbr" firstAttribute="top" secondItem="Y97-L1-I15" secondAttribute="bottom" constant="40" id="9rh-b2-C1P"/>
+                            <constraint firstItem="nq7-YS-8c9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="ADj-Fb-F9x"/>
+                            <constraint firstItem="Y97-L1-I15" firstAttribute="centerX" secondItem="Oro-RW-Vbr" secondAttribute="centerX" id="Avr-yv-SOk"/>
+                            <constraint firstItem="8fn-ip-mCc" firstAttribute="top" secondItem="nq7-YS-8c9" secondAttribute="bottom" constant="30" id="Ega-RY-Ton"/>
+                            <constraint firstItem="Y97-L1-I15" firstAttribute="top" secondItem="pK7-Gq-YdS" secondAttribute="bottom" constant="60" id="Kli-8t-by8"/>
+                            <constraint firstItem="pK7-Gq-YdS" firstAttribute="top" secondItem="8fn-ip-mCc" secondAttribute="bottom" constant="50" id="MW7-yG-6pA"/>
+                            <constraint firstItem="nq7-YS-8c9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WtJ-d5-jPi"/>
+                            <constraint firstItem="Y97-L1-I15" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="ZpN-8a-Xjw"/>
+                            <constraint firstItem="pK7-Gq-YdS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gpr-vG-woT"/>
+                            <constraint firstItem="Y97-L1-I15" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pCM-QA-yLN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="commentTxtView" destination="Y97-L1-I15" id="e0Z-cN-rzc"/>
+                        <outlet property="feedbackStack" destination="8fn-ip-mCc" id="J3v-eV-TCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
