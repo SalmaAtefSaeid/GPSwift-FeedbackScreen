@@ -18,11 +18,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         commentTxtView.delegate = self
         commentTxtView.text = "Tell us your comment"
-        commentTxtView.textColor = UIColor.lightGray
+        commentTxtView.textColor = UIColor.darkGray
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
+        if textView.textColor == UIColor.darkGray {
             textView.text = nil
             textView.textColor = UIColor.black
         }
